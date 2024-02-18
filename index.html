@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Compound Interest Calculator</title>
+
+    <script language="JavaScript">
+      function calculate(formObj)
+      {
+           var presentVal = parseFloat(formObj.presentVal.value);
+           var intRate = parseFloat(formObj.intRate.value)/100.;
+           var years = parseFloat(formObj.years.value);
+         
+           var futureVal = presentVal * Math.pow((1.0+intRate),years);
+           var totalInt = futureVal - presentVal;
+           futureVal = Math.round(futureVal*100.0)/100.0;
+           totalInt  = Math.round(totalInt*100.0)/100.0;
+         
+           formObj.futureVal.value = futureVal;
+           formObj.totalInt.value = totalInt;
+         
+           return;
+      }
+      </script>
+  </head>
+  <body>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 text-light bg-success">
+          <p class="m-0 p-3 text-center"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid m-0 p-0">
+      <nav class="navbar navbar-dark bg-warning justify-content-center" style="background-image: linear-gradient(to right, black, green, green,  green, black, green, green, green, black, green, green, green, black);">
+        <p class="m-0 display-4 text-light font-weight-bold" style="padding-top: 60px; padding-bottom: 60px;">MyTools.com</p>
+      </nav>
+    </div>
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 text-light bg-success">
+          <p class="m-0 p-3 text-center"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 m-0 p-0 text-light bg-success">
+          <div class="m-0 p-5">
+            <h5 style="margin: 0px; padding: 16px; text-align: center;">Compound Interest Calculator</h5>
+            <form name="myform" style="margin: 0px; padding: 16px; text-align: center;">
+              <label for="Principal amount" style="margin: 10px;">Principal Amount</label><br>
+              <input type="text" name="presentVal"><br>
+              <label for="Rate of interest (p.a)" style="margin: 10px;">Rate Of Interest (P.A)</label><br>
+              <input type="text" name="intRate"><br>
+              <label for="Time period" style="margin: 10px;">Time Period (Year)</label><br>
+              <input type="text" name="years"><br>
+              
+              <div class="p-3">
+                <input type="button" name="calc" value="Calculate" onclick="calculate(myform)"><br>
+              </div>
+              
+              
+              <label for="Total Interest" style="margin: 10px;">Total Interest</label><br>
+              <input type="text" name="totalInt"><br>
+              <label for="Future Value" style="margin: 10px;">Future Value</label><br>
+              <input type="text" name="futureVal"><br>
+            </form>
+          </div>
+        </div>
+        <div class="col-md-6 p-5 text-light bg-warning text-dark">
+          <h5><strong>What is Compound Interest Calculator?</strong></h5>
+          <p><span style="font-weight: 200;">A compound interest calculator is a simulation, that shows how investments grow with time. You need three parts to calculate the compound interest that is the principal amount, interest rate, and time for which the money is invested.</span></p>
+          <h5><strong>How to Calculate Compound Interest?</strong></h5>
+          <p><span style="font-weight: 200;">Groww uses a globally standardized method to determine the total compound interest accrued. The formula is:</span></p>
+          <p><strong>A = P (1 + r/n) ^ nt</strong></p>
+          <table>
+            <tbody>
+            <tr>
+            <td><strong>P</strong></td>
+            <td><span style="font-weight: 200;">- Principal Amount</span></td>
+            </tr>
+            <tr>
+            <td><strong>A</strong></td>
+            <td><span style="font-weight: 200;">- Compound interest</span></td>
+            </tr>
+            <tr>
+            <td><strong>R/r</strong></td>
+            <td><span style="font-weight: 200;">- Rate of interest</span></td>
+            </tr>
+            <tr>
+            <td><strong>N/n</strong></td>
+            <td><span style="font-weight: 200;">- Number of times interest compounds in a year</span></td>
+            </tr>
+            <tr>
+            <td><strong>T/t</strong></td>
+            <td><span style="font-weight: 200;">- Number of years</span></td>
+            </tr>
+            </tbody>
+            </table>
+        
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 text-light bg-light">
+          <p class="m-0 p-2 text-center"></p>
+        </div>
+        <div class="col-md-3 text-light bg-warning">
+          <p class="m-0 p-2 text-center"></p>
+        </div>
+        <div class="col-md-3 text-light bg-warning">
+          <p class="m-0 p-2 text-center"></p>
+        </div>
+        <div class="col-md-3 text-light bg-warning">
+          <p class="m-0 p-2 text-center"></p>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mt-3 p-3 text-light bg-dark">
+          <h5><strong>What is Compound Interest Calculator?</strong></h5>
+          <p><span style="font-weight: 200;">A compound interest calculator is a simulation, that shows how investments grow with time. You need three parts to calculate the compound interest that is the principal amount, interest rate, and time for which the money is invested.</span></p>
+        </div>
+        <div class="col-md-6 mt-3 p-3 text-light bg-dark">
+          <h5><strong>How to Calculate Compound Interest?</strong></h5>
+          <p><span style="font-weight: 200;">Groww uses a globally standardized method to determine the total compound interest accrued. The formula is:</span></p>
+          <p><strong>A = P (1 + r/n) ^ nt</strong></p>
+          <table>
+            <tbody>
+            <tr>
+            <td><strong>P</strong></td>
+            <td><span style="font-weight: 200;">- Principal Amount</span></td>
+            </tr>
+            <tr>
+            <td><strong>A</strong></td>
+            <td><span style="font-weight: 200;">- Compound interest</span></td>
+            </tr>
+            <tr>
+            <td><strong>R/r</strong></td>
+            <td><span style="font-weight: 200;">- Rate of interest</span></td>
+            </tr>
+            <tr>
+            <td><strong>N/n</strong></td>
+            <td><span style="font-weight: 200;">- Number of times interest compounds in a year</span></td>
+            </tr>
+            <tr>
+            <td><strong>T/t</strong></td>
+            <td><span style="font-weight: 200;">- Number of years</span></td>
+            </tr>
+            </tbody>
+            </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 text-light bg-light">
+          <p class="m-0 p-3 text-center"></p>
+        </div>
+        <div class="col-md-4 text-light bg-warning">
+          <p class="m-0 p-3 text-center"></p>
+        </div>
+        <div class="col-md-4 text-light bg-warning">
+          <p class="m-0 p-3 text-center"></p>
+        </div>
+      </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
