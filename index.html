@@ -10,24 +10,29 @@
 
     <title>Compound Interest Calculator</title>
 
-    <script language="JavaScript">
-      function calculate(formObj)
-      {
-           var presentVal = parseFloat(formObj.presentVal.value);
-           var intRate = parseFloat(formObj.intRate.value)/100.;
-           var years = parseFloat(formObj.years.value);
-         
-           var futureVal = presentVal * Math.pow((1.0+intRate),years);
-           var totalInt = futureVal - presentVal;
-           futureVal = Math.round(futureVal*100.0)/100.0;
-           totalInt  = Math.round(totalInt*100.0)/100.0;
-         
-           formObj.futureVal.value = futureVal;
-           formObj.totalInt.value = totalInt;
-         
-           return;
+    <style>
+      html, body {
+        height: 100%;
       }
-      </script>
+    </style>
+
+    <script>
+      function calculate(formObj) {
+        var presentVal = parseFloat(formObj.presentVal.value);
+        var intRate = parseFloat(formObj.intRate.value)/100.;
+        var years = parseFloat(formObj.years.value);
+
+        var futureVal = presentVal * Math.pow((1.0+intRate), years);
+        var totalInt = futureVal - presentVal;
+        futureVal = Math.round(futureVal*100.0)/100.0;
+        totalInt  = Math.round(totalInt*100.0)/100.0;
+
+        formObj.futureVal.value = futureVal;
+        formObj.totalInt.value = totalInt;
+
+        return;
+      }
+    </script>
   </head>
   <body>
 
@@ -44,7 +49,7 @@
         <p class="m-0 text-light font-weight-bold" style="padding-top: 30px; padding-bottom: 30px; font-size: 40px;">MyTools.com</p>
       </nav>
     </div>
-    
+
     <div class="container">
       <div class="row">
         <div class="col-md-3 text-light" style="background-color: #21618C;">
@@ -79,12 +84,11 @@
               <input type="text" name="intRate"><br>
               <label for="Time period" style="margin: 10px;">Time Period (Year)</label><br>
               <input type="text" name="years"><br>
-              
+
               <div class="p-3">
                 <input type="button" class="btn btn-success btn-lg active rounded-pill" name="calc" value="Calculate" onclick="calculate(myform)"><br>
               </div>
-              
-              
+
               <label for="Total Interest" style="margin: 10px;">Total Return (Interest)</label><br>
               <input type="text" name="totalInt"><br>
               <label for="Future Value" style="margin: 10px;">Future Value</label><br>
@@ -102,28 +106,28 @@
           <p><strong>A = P (1 + r/n) ^ nt</strong></p>
           <table>
             <tbody>
-            <tr>
-            <td><strong>P</strong></td>
-            <td><span style="font-weight: 200;">- Principal Amount</span></td>
-            </tr>
-            <tr>
-            <td><strong>A</strong></td>
-            <td><span style="font-weight: 200;">- Compound interest</span></td>
-            </tr>
-            <tr>
-            <td><strong>R/r</strong></td>
-            <td><span style="font-weight: 200;">- Rate of interest</span></td>
-            </tr>
-            <tr>
-            <td><strong>N/n</strong></td>
-            <td><span style="font-weight: 200;">- Number of times interest compounds in a year</span></td>
-            </tr>
-            <tr>
-            <td><strong>T/t</strong></td>
-            <td><span style="font-weight: 200;">- Number of years</span></td>
-            </tr>
+              <tr>
+                <td><strong>P</strong></td>
+                <td><span style="font-weight: 200;">- Principal Amount</span></td>
+              </tr>
+              <tr>
+                <td><strong>A</strong></td>
+                <td><span style="font-weight: 200;">- Compound interest</span></td>
+              </tr>
+              <tr>
+                <td><strong>R/r</strong></td>
+                <td><span style="font-weight: 200;">- Rate of interest</span></td>
+              </tr>
+              <tr>
+                <td><strong>N/n</strong></td>
+                <td><span style="font-weight: 200;">- Number of times interest compounds in a year</span></td>
+              </tr>
+              <tr>
+                <td><strong>T/t</strong></td>
+                <td><span style="font-weight: 200;">- Number of years</span></td>
+              </tr>
             </tbody>
-            </table>
+          </table>
         </div>
       </div>
     </div>
